@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional educational and services institute offering IT consulting, training, and development services.">
+    <meta name="keywords" content="education, IT consulting, training, digital marketing, corporate training, academic projects">
+    <meta name="author" content="Your Institute Name">
+    <title>Your Institute Name</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: blue;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #b21a25, #6610f2);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .card {
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .blinking-glow {
+        animation: blinkGlow 1.5s infinite;
+        color: #e52504;
+        font-weight: bold;
+        text-shadow: 0 0 5px #131c1d, 0 0 10px #1e2626, 0 0 15px #070e0f;
+    }
+
+    @keyframes blinkGlow {
+        0%, 100% {
+            opacity: 1;
+            text-shadow: 0 0 5px #e46186, 0 0 10px #d60f0f, 0 0 15px #2808c9;
+        }
+        50% {
+            opacity: 0.3;
+            text-shadow: 0 0 2px #d76112, 0 0 5px #0a2122;
+        }
+    }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        .marquee-content .card {
+            display: inline-block;
+            width: 250px;
+            margin-right: 20px;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .feedback-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .marquee-content .card {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ZIZA FIRST TECHNOLOGIES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="placements.html">Placements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discover.html">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link blinking-glow" href="apply.html">Apply for Job</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to Your Institute</h1>
+            <p>Empowering futures through education and professional services.</p>
+            <a href="contact.html" class="btn btn-light mt-3">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Mission</h3>
+                    <p>To provide high-quality education and services that empower individuals and organizations to achieve their full potential.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Vision</h3>
+                    <p>To be a global leader in innovative education and professional services, fostering growth and excellence.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Goal</h3>
+                    <p>To bridge the gap between education and industry needs through cutting-edge training and solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses Marquee Section -->
+    <section class="section marquee">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Courses</h2>
+            <div class="marquee-content">
+                <div class="card p-3">
+                    <h5>Web Development</h5>
+                    <p>Learn to build modern websites with HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="card p-3">
+                    <h5>Data Science</h5>
+                    <p>Master data analysis and machine learning with Python.</p>
+                </div>
+                <div class="card p-3">
+                    <h5>Digital Marketing</h5>
+                    <p>Explore SEO, social media, and content marketing strategies.</p>
+                </div>
+                <div class="card p-3">
+                    <h5>App Development</h5>
+                    <p>Create mobile apps for iOS and Android platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Students Feedback Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-4">Students Feedback</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feedback-card">
+                        <p>"The IT consulting course transformed my career. The instructors were knowledgeable and supportive!"</p>
+                        <p><strong>- John Doe, IT Professional</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feedback-card">
+                        <p>"The CRT training helped me ace my campus interviews. Highly recommend this institute!"</p>
+                        <p><strong>- Jane Smith, Software Engineer</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feedback-card">
+                        <p>"The digital marketing course was practical and up-to-date. I now run my own campaigns!"</p>
+                        <p><strong>- Alex Brown, Marketing Specialist</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feedback-card">
+                        <p>"The hands-on approach in the web development course was fantastic. I built my first website!"</p>
+                        <p><strong>- Emily Davis, Web Developer</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p>Email: admin@zizafirst.com</p>
+                    <p>Phone: +91 79955 07041</p>
+                    <p>Address: Opposite Aakash IIT, Habsiguda, Hyderabad</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white me-2">Facebook</a>
+                    <a href="#" class="text-white me-2">Twitter</a>
+                    <a href="#" class="text-white me-2">LinkedIn</a>
+                    <a href="#" class="text-white">Instagram</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="index.html" class="text-white d-block">Home</a>
+                    <a href="services.html" class="text-white d-block">Services</a>
+                    <a href="courses.html" class="text-white d-block">Courses</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
