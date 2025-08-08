@@ -12,6 +12,7 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
+            background-color: #f4f6f9;
         }
         .navbar-brand {
             font-weight: bold;
@@ -19,98 +20,193 @@
         .header-section {
             background: linear-gradient(135deg, #007bff, #6610f2);
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .header-section h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+        }
+        .header-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
         .section {
             padding: 60px 0;
         }
         .card {
-            transition: transform 0.3s;
             border: none;
-            background-color: #f8f9fa;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .card h3 {
+            font-weight: bold;
+            color: #007bff;
+        }
+        /* Feedback Scroller */
+        .feedback-scroller {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #ffffff;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .feedback-track {
+            display: inline-flex;
+            animation: scrollLeft 30s linear infinite;
+        }
+        .feedback-card {
+            flex: 0 0 auto;
+            width: 350px;
+            margin: 0 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .feedback-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #007bff;
+        }
+        .stars {
+            color: #ffbf00;
+            margin-bottom: 10px;
+        }
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        /* Company Logo Scroller */
+        .company-scroller {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #ffffff;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .company-track {
+            display: inline-flex;
+            animation: scrollRight 25s linear infinite;
+        }
+        .company-card {
+            flex: 0 0 auto;
+            width: 150px;
+            height: 100px;
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .company-card img {
+            max-width: 100%;
+            max-height: 80%;
+        }
+        @keyframes scrollRight {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
         }
         footer {
             background-color: #343a40;
             color: white;
             padding: 40px 0;
         }
-        .form-control:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-        @media (max-width: 768px) {
-            .header-section {
-                padding: 40px 0;
-            }
-            .section {
-                padding: 40px 0;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">Your Institute</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="courses.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="placements.html">Placements</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="discover.html">Discover</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="apply.html">Apply for Job</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="placements.html">Placements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="discover.html">Discover</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-sm btn-warning text-dark" href="apply.html">Apply for Job</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <section class="header-section">
         <div class="container">
             <h1>Placements</h1>
-            <p>Connect with top employers through our placement drives.</p>
+            <p>We connect our students with leading companies through dynamic placement drives.</p>
         </div>
     </section>
 
-    <!-- Placements Section -->
+    <!-- Placement Info -->
     <section class="section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card p-3">
-                        <h3>Online/Offline Drives</h3>
-                        <p>Join our placement drives conducted both online and offline for maximum accessibility.</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card p-4">
+                        <h3>Online & Offline Drives</h3>
+                        <p>We organize regular online and offline placement drives to ensure that every student has equal opportunities to secure their dream job, regardless of location.</p>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card p-3">
-                        <h3>Campus Drives (Online/Offline)</h3>
-                        <p>Participate in our campus recruitment drives to connect with top employers.</p>
+                <div class="col-md-6">
+                    <div class="card p-4">
+                        <h3>Campus Recruitment</h3>
+                        <p>Our strong industry connections allow us to conduct exclusive campus recruitment drives with top-tier companies, ensuring high placement rates.</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Feedback Scroller -->
+            <div class="feedback-scroller mt-5">
+                <div class="feedback-track">
+                    <div class="feedback-card">
+                        <img src="student1.jpg" alt="Student">
+                        <div class="stars">★★★★★</div>
+                        <p>"Thanks to the placement drive, I secured a role at Wipro in my dream department!"</p>
+                    </div>
+                    <div class="feedback-card">
+                        <img src="student2.jpg" alt="Student">
+                        <div class="stars">★★★★☆</div>
+                        <p>"The career guidance and mock interviews really boosted my confidence."</p>
+                    </div>
+                    <div class="feedback-card">
+                        <img src="student3.jpg" alt="Student">
+                        <div class="stars">★★★★★</div>
+                        <p>"I landed a job at TCS within a month of completing my course."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Logo Scroller -->
+            <div class="company-scroller mt-5">
+                <div class="company-track">
+                    <div class="company-card"><img src="tcs.png" alt="TCS"></div>
+                    <div class="company-card"><img src="wipro.png" alt="Wipro"></div>
+                    <div class="company-card"><img src="hcl.png" alt="HCL"></div>
+                    <div class="company-card"><img src="virtusa.png" alt="Virtusa"></div>
+                    <div class="company-card"><img src="techmind.png" alt="Techmind"></div>
                 </div>
             </div>
         </div>

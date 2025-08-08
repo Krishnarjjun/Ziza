@@ -5,152 +5,423 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional educational and services institute offering IT consulting, training, and development services.">
     <meta name="keywords" content="education, IT consulting, training, digital marketing, corporate training, academic projects">
-    <meta name="author" content="Your Institute Name">
-    <title>Your Institute Name</title>
+    <meta name="author" content="Ziza First Technologies">
+    <title>Ziza First Technologies</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
+        :root {
+            --accent-color: #0d6efd;
+            --card-radius: 14px;
+            --marquee-speed-feedback: 20s;
+            --marquee-speed-company: 22s;
+            --card-gap: 18px;
+            --muted: #6c757d;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-
+            margin: 0;
         }
+
+        /* Navigation */
         .navbar-brand {
             font-weight: bold;
-            color: blue;
+            color: var(--accent-color);
         }
+
+        /* Hero Section */
         .hero-section {
             background-image: url('IMG-20250806-WA0006.jpg');
             background-repeat: no-repeat;
+            background-position: center;
+            /* background-size: cover; */
+            /* height: 100vh; */
+            width: 100vw;
             color: white;
             padding: 100px 0;
             text-align: center;
-            background-position: center;
-
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+        /* Common Section Styles */
         .section {
-            padding: 60px 0;
+            padding: 28px 0;
+            width: 100%;
         }
-        .card {
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .blinking-glow {
-        animation: blinkGlow 1.5s infinite;
-        color: #e52504;
-        font-weight: bold;
-        text-shadow: 0 0 5px #131c1d, 0 0 10px #1e2626, 0 0 15px #070e0f;
-    }
 
-    @keyframes blinkGlow {
-        0%, 100% {
-            opacity: 1;
-            text-shadow: 0 0 5px #e46186, 0 0 10px #d60f0f, 0 0 15px #2808c9;
+        .section .container {
+            max-width: 1140px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 16px;
         }
-        50% {
-            opacity: 0.3;
-            text-shadow: 0 0 2px #d76112, 0 0 5px #0a2122;
+
+        .section-heading {
+            text-align: center;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            margin-bottom: 40px;
+            color: #0f172a;
+            font-weight: 700;
+            position: relative;
         }
-    }
+
+        .section-heading::after {
+            content: '';
+            display: block;
+            height: 4px;
+            width: 50px;
+            background: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-section {
+            background: linear-gradient(180deg, #f8faff, #ffffff);
+            padding: 60px 20px;
+        }
+
+        .about-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .about-card {
+            background: #ffffff;
+            border-radius: var(--card-radius);
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .about-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-icon {
+            font-size: 2.5rem;
+            background: rgba(13,110,253,0.08);
+            color: var(--accent-color);
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .about-card h3 {
+            margin-bottom: 12px;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .about-card p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+            gap: 15px;
+        }
+
+        .course-item {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .course-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .course-item span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .course-item:hover {
+            background-color: #e0f7fa;
+            transform: scale(1.05);
+        }
+
+        /* Marquee Common */
+        .marquee-wrap {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 0;
+            width: 100vw;
+        }
+
+        .marquee-wrap::before,
+        .marquee-wrap::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 90px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .marquee-wrap::before {
+            left: 0;
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 60%);
+        }
+
+        .marquee-wrap::after {
+            right: 0;
+            background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 60%);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: var(--card-gap);
+            align-items: stretch;
+            width: max-content;
+        }
+
+        .marquee-wrap:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        /* Feedback Section */
+        .marquee-left .marquee-track {
+            animation: marquee-left var(--marquee-speed-feedback) linear infinite;
+        }
+
+        .feedback-card {
+            display: flex;
+            width: clamp(280px, 30vw, 380px);
+            min-width: clamp(280px, 30vw, 380px);
+            background: #ffffff;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(15, 23, 30, 0.07);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .f-image {
+            flex: 0 0 30%;
+            background: linear-gradient(180deg,#f8f9fb,#ffffff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .f-image img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .f-body {
+            flex: 1;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .f-name {
+            margin: 0 0 6px;
+            font-size: 1rem;
+            color: #0f1720;
+            font-weight: 600;
+        }
+
+        .stars {
+            margin-bottom: 8px;
+        }
+
+        .star {
+            color: #d6d6d6;
+            font-size: 14px;
+            margin-right: 2px;
+        }
+
+        .star.filled {
+            color: #ffb400;
+        }
+
+        .f-text {
+            margin: 0 0 8px;
+            color: #333;
+            font-size: 0.94rem;
+            line-height: 1.3;
+        }
+
+        .placement {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #19784d;
+            font-weight: 600;
+        }
+
+        .placement .placed-role {
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Company Section */
+        .marquee-right .marquee-track {
+            animation: marquee-right var(--marquee-speed-company) linear infinite;
+            align-items: center;
+        }
+
+        .company-card {
+            width: clamp(130px, 15vw, 160px);
+            min-width: clamp(130px, 15vw, 160px);
+            height: clamp(64px, 10vh, 76px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 10px;
+            padding: 8px;
+            box-shadow: 0 6px 14px rgba(10,20,30,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .company-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        @keyframes marquee-right {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+
+        /* Blinking Glow Effect */
+        .blinking-glow {
+            animation: blinkGlow 1.5s infinite;
+            color: #e52504;
+            font-weight: bold;
+            text-shadow: 0 0 5px #131c1d, 0 0 10px #1e2626, 0 0 15px #070e0f;
+        }
+
+        @keyframes blinkGlow {
+            0%, 100% {
+                opacity: 1;
+                text-shadow: 0 0 5px #e46186, 0 0 10px #d60f0f, 0 0 15px #2808c9;
+            }
+            50% {
+                opacity: 0.3;
+                text-shadow: 0 0 2px #d76112, 0 0 5px #0a2122;
+            }
+        }
+
+        /* Footer */
         footer {
             background-color: #343a40;
             color: white;
             padding: 40px 0;
+            width: 100%;
         }
+
         .form-control:focus {
-            border-color: #007bff;
+            border-color: var(--accent-color);
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
-        .marquee {
-            overflow: hidden;
-            white-space: nowrap;
-            background-color: #f8f9fa;
-            padding: 20px 0;
-        }
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
-        }
-        .marquee-content .card {
-            display: inline-block;
-            width: 250px;
-            margin-right: 20px;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .feedback-card {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        @media (max-width: 768px) {
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
             .hero-section {
                 padding: 60px 0;
+                height: 80vh;
             }
             .section {
                 padding: 40px 0;
             }
-            .marquee-content .card {
-                width: 200px;
+            .feedback-card {
+                width: clamp(250px, 28vw, 320px);
+                min-width: clamp(250px, 28vw, 320px);
+            }
+            .company-card {
+                width: clamp(100px, 12vw, 130px);
+                min-width: clamp(100px, 12vw, 130px);
+                height: clamp(50px, 8vh, 64px);
+            }
+            .marquee-wrap::before, .marquee-wrap::after {
+                width: 60px;
+            }
+            .course-item img {
+                max-width: 80%;
             }
         }
-        .feedback-card {
-    display: flex;
-    height: 220px; /* Fixed height for uniform cards */
-    border-radius: 10px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border: 1px solid #ddd;
-}
 
-.feedback-image {
-    flex: 0 0 30%;
-    background-color: #f0f0f0;
-}
-
-.feedback-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.feedback-text {
-    flex: 0 0 70%;
-    padding: 15px;
-    overflow-y: auto; /* Enables scrolling inside card */
-    scrollbar-width: thin;
-    scrollbar-color: #007bff #f1f1f1;
-}
-
-/* Professional scrollbar style */
-.feedback-text::-webkit-scrollbar {
-    width: 6px;
-}
-.feedback-text::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-.feedback-text::-webkit-scrollbar-thumb {
-    background: #007bff;
-    border-radius: 5px;
-}
-.feedback-text::-webkit-scrollbar-thumb:hover {
-    background: #0056b3;
-}
-
+        @media (max-width: 520px) {
+            .hero-section {
+                height: 70vh;
+            }
+            .feedback-card {
+                width: clamp(220px, 25vw, 280px);
+                min-width: clamp(220px, 25vw, 280px);
+            }
+            .f-body {
+                padding: 10px;
+            }
+            .f-text {
+                font-size: 0.9rem;
+            }
+            .f-image img {
+                max-height: 80px;
+            }
+            .course-item img {
+                max-width: 70%;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">ZIZA FIRST TECHNOLOGIES</a>
+            <a class="navbar-brand" href="index.html">Ziza First Technologies</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -182,29 +453,31 @@
         </div>
     </nav>
 
-    <!-- Home Page -->
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
+            
         </div>
     </section>
-     <div style="background-color: rgba(0, 123, 255, 0.1); text-align: center;">
-    <a href="contact.html" class="btn btn-light mt-3">Get in Touch</a>
-</div>
+    <center><a href="contact.html" class="btn btn-light mt-3">Get in Touch</a></center>
 
     <!-- About Us Section -->
-    <section class="section">
+    <section class="about-section">
         <div class="container">
-            <h2>About Us</h2>
-            <div class="row">
-                <div class="col-md-4">
+            <h2 class="section-heading">About Us</h2>
+            <div class="about-row">
+                <div class="about-card">
+                    <div class="about-icon">🎯</div>
                     <h3>Mission</h3>
                     <p>To provide high-quality education and services that empower individuals and organizations to achieve their full potential.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="about-card">
+                    <div class="about-icon">🌍</div>
                     <h3>Vision</h3>
                     <p>To be a global leader in innovative education and professional services, fostering growth and excellence.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="about-card">
+                    <div class="about-icon">🚀</div>
                     <h3>Goal</h3>
                     <p>To bridge the gap between education and industry needs through cutting-edge training and solutions.</p>
                 </div>
@@ -212,98 +485,248 @@
         </div>
     </section>
 
-    <!-- Featured Courses Marquee Section -->
-     
-    <section class="section marquee">
+    <!-- Courses Section -->
+    <section class="section courses">
         <div class="container">
-            <h2 class="text-center mb-4">Featured Courses</h2>
-            <div class="marquee-content">
-                <div class="card p-3">
-                    <h5>Web Development</h5>
-                    <p>Learn to build modern websites with HTML, CSS, and JavaScript.</p>
+            <h2 class="section-heading">Our Courses</h2>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="https://th.bing.com/th/id/R.8c1719d731849436c9b734d7d65e9558?rik=bSbWm6hjVbDSPg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpython-logo-png-big-image-png-2400.png&ehk=QVy%2f7oOiTJ16YDb0ys7dyNAHnvvwPX1WAaD7AvoVnTU%3d&risl=&pid=ImgRaw&r=0" alt="Python Programming">
+                    <span>Python Programming</span>
                 </div>
-                <div class="card p-3">
-                    <h5>Data Science</h5>
-                    <p>Master data analysis and machine learning with Python.</p>
+                <div class="course-item">
+                    <img src="https://download.logo.wine/logo/Java_(programming_language)/Java_(programming_language)-Logo.wine.png">
+                    <span>Java Programming</span>
                 </div>
-                <div class="card p-3">
-                    <h5>Digital Marketing</h5>
-                    <p>Explore SEO, social media, and content marketing strategies.</p>
+                <div class="course-item">
+                    <img src="https://techworm.net/programming/wp-content/uploads/2018/09/c-programming-1.png" alt="C Programming">
+                    <span>C Programming</span>
                 </div>
-                <div class="card p-3">
-                    <h5>App Development</h5>
-                    <p>Create mobile apps for iOS and Android platforms.</p>
+                <div class="course-item">
+                    <img src="https://logowik.com/content/uploads/images/911_c_logo.jpg" alt="C++ Programming">
+                    <span>C++ Programming</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://logos-world.net/wp-content/uploads/2023/02/JavaScript-Symbol.png" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://clipartcraft.com/images/html5-logo-psd-3.png" alt="HTML & CSS">
+                    <span>HTML & CSS</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-5/24/react-1024.png" alt="ReactJS">
+                    <span>ReactJS</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.seeklogo.com/logo-png/27/2/node-js-logo-png_seeklogo-273750.png" alt="NodeJS">
+                    <span>NodeJS</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://www.galtechlearning.com/wp-content/uploads/2023/04/Full_stack_developer-1-1.webp">
+                    <span>Full Stack Development</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://i.ytimg.com/vi/lq60Vfa_U4U/maxresdefault.jpg">
+                    <span>Data Structures & Algorithms</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://learnsql.com/blog/what-is-dbms/DBMS.png">
+                    <span>Database Management (SQL)</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://logodix.com/logo/1198737.jpg" alt="Machine Learning">
+                    <span>Machine Learning</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://i.pinimg.com/originals/f0/db/f5/f0dbf54f437965521e9aa5d6da2cf6c6.png" alt="Deep Learning">
+                    <span>Deep Learning</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://static.vecteezy.com/system/resources/previews/011/894/736/original/artificial-intelligence-concept-an-illustration-of-ai-artificial-intelligence-by-utilizing-lines-machine-learning-and-cyber-mind-domination-concept-in-form-of-human-face-free-vector.jpg">
+                    <span>Artificial Intelligence</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://www.it-impresa.it/wp-content/uploads/Cloud-Computing-3.jpg" alt="Cloud Computing">
+                    <span>Cloud Computing</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://cio.ucop.edu/wp-content/uploads/2023/03/aws-1000x500.jpeg" alt="AWS & DevOps">
+                    <span>AWS & DevOps</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.X0HeY6OgR7_n4d8Fo6qDXgHaDX?cb=thfc1&w=1100&h=500&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kubernetes">
+                    <span>Kubernetes</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/docker/large_v-trans.png" alt="Docker">
+                    <span>Docker</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://www.linknet.id/files/photos/shares/article/cyber%20security.jpg" alt="Cybersecurity">
+                    <span>Cybersecurity</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://marstech.lk/wp-content/uploads/2025/01/ethical-hacking-.jpg" alt="Ethical Hacking">
+                    <span>Ethical Hacking</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://th.bing.com/th/id/R.b320dcb0ccf40b82a20a477d9b76d827?rik=km%2fqxFDQmf2AbA&riu=http%3a%2f%2fwww.harbor.com.br%2fwp-content%2fuploads%2f2018%2f07%2fbig-data.jpg&ehk=UkuKYEsJ3SCnQ3Vow%2b8G2bXQ0iCUACZy%2f%2bAYLD9zjvc%3d&risl=&pid=ImgRaw&r=0" alt="UI/UX Design">
+                    <span>UI/UX Design</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://www.widgrid.com.br/source/files/c/630/marketing_digital_basico-094172_1254-836-0-0.jpg" alt="Digital Marketing">
+                    <span>Digital Marketing</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://th.bing.com/th/id/R.b320dcb0ccf40b82a20a477d9b76d827?rik=km%2fqxFDQmf2AbA&riu=http%3a%2f%2fwww.harbor.com.br%2fwp-content%2fuploads%2f2018%2f07%2fbig-data.jpg&ehk=UkuKYEsJ3SCnQ3Vow%2b8G2bXQ0iCUACZy%2f%2bAYLD9zjvc%3d&risl=&pid=ImgRaw&r=0" alt="Big Data & Hadoop">
+                    <span>Big Data & Hadoop</span>
+                </div>
+                <div class="course-item">
+                    <img src="https://www.widgrid.com.br/source/files/c/630/marketing_digital_basico-094172_1254-836-0-0.jpg" alt="Tableau & Power BI">
+                    <span>Tableau & Power BI</span>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Students Feedback Section -->
-<section class="section">
-    <div class="container">
-        <h2 class="text-center mb-4">Students Feedback</h2>
-        <div class="row g-4">
-
-            <!-- Feedback Card 1 -->
-            <div class="col-md-6">
-                <div class="feedback-card">
-                    <div class="feedback-image">
-                        <img src="student1.jpg" alt="John Doe">
-                    </div>
-                    <div class="feedback-text">
-                        <p>"The IT consulting course transformed my career. The instructors were knowledgeable and supportive!"</p>
-                        <p class="text-success"><strong>Got placed in his dream job at Google</strong></p>
-                        <p><strong>- John Doe, IT Professional</strong></p>
-                    </div>
+    <!-- Student Feedback Section -->
+    <section class="section feedback-section">
+        <div class="container">
+            <h2 class="section-heading">What Our Students Say</h2>
+            <div class="marquee-wrap marquee-left">
+                <div class="marquee-track">
+                    <!-- First set -->
+                    <article class="feedback-card">
+                        <div class="f-image">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=ffffff&color=0d6efd&rounded=true" alt="John Doe">
+                        </div>
+                        <div class="f-body">
+                            <h4 class="f-name">John Doe</h4>
+                            <div class="stars" aria-label="4 out of 5 stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">☆</span>
+                            </div>
+                            <p class="f-text">"The IT consulting course transformed my career — hands-on projects and great mentors."</p>
+                            <p class="placement">✔ <strong>Placed at:</strong> Google — <span class="placed-role">Software Engineer</span></p>
+                        </div>
+                    </article>
+                    <article class="feedback-card">
+                        <div class="f-image">
+                            <img src="https://ui-avatars.com/api/?name=Priya+K&background=ffffff&color=0d6efd&rounded=true" alt="Priya K">
+                        </div>
+                        <div class="f-body">
+                            <h4 class="f-name">Priya K</h4>
+                            <div class="stars" aria-label="5 out of 5 stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <p class="f-text">"CRT sessions prepared me for interviews — I landed my dream role right after the course."</p>
+                            <p class="placement">✔ <strong>Placed at:</strong> Infosys — <span class="placed-role">Associate Engineer</span></p>
+                        </div>
+                    </article>
+                    <article class="feedback-card">
+                        <div class="f-image">
+                            <img src="https://ui-avatars.com/api/?name=Arun+S&background=ffffff&color=0d6efd&rounded=true" alt="Arun S">
+                        </div>
+                        <div class="f-body">
+                            <h4 class="f-name">Arun S</h4>
+                            <div class="stars" aria-label="4 out of 5 stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">☆</span>
+                            </div>
+                            <p class="f-text">"Project-based learning was excellent — the portfolio helped in interviews."</p>
+                            <p class="placement">✔ <strong>Placed at:</strong> TCS — <span class="placed-role">Junior Dev</span></p>
+                        </div>
+                    </article>
+                    <!-- Duplicate set for seamless loop -->
+                    <article class="feedback-card">
+                        <div class="f-image">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=ffffff&color=0d6efd&rounded=true" alt="John Doe">
+                        </div>
+                        <div class="f-body">
+                            <h4 class="f-name">John Doe</h4>
+                            <div class="stars" aria-label="4 out of 5 stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">☆</span>
+                            </div>
+                            <p class="f-text">"The IT consulting course transformed my career — hands-on projects and great mentors."</p>
+                            <p class="placement">✔ <strong>Placed at:</strong> Google — <span class="placed-role">Software Engineer</span></p>
+                        </div>
+                    </article>
+                    <article class="feedback-card">
+                        <div class="f-image">
+                            <img src="https://ui-avatars.com/api/?name=Priya+K&background=ffffff&color=0d6efd&rounded=true" alt="Priya K">
+                        </div>
+                        <div class="f-body">
+                            <h4 class="f-name">Priya K</h4>
+                            <div class="stars" aria-label="5 out of 5 stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <p class="f-text">"CRT sessions prepared me for interviews — I landed my dream role right after the course."</p>
+                            <p class="placement">✔ <strong>Placed at:</strong> Infosys — <span class="placed-role">Associate Engineer</span></p>
+                        </div>
+                    </article>
+                    <article class="feedback-card">
+                        <div class="f-image">
+                            <img src="https://ui-avatars.com/api/?name=Arun+S&background=ffffff&color=0d6efd&rounded=true" alt="Arun S">
+                        </div>
+                        <div class="f-body">
+                            <h4 class="f-name">Arun S</h4>
+                            <div class="stars" aria-label="4 out of 5 stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">☆</span>
+                            </div>
+                            <p class="f-text">"Project-based learning was excellent — the portfolio helped in interviews."</p>
+                            <p class="placement">✔ <strong>Placed at:</strong> TCS — <span class="placed-role">Junior Dev</span></p>
+                        </div>
+                    </article>
                 </div>
             </div>
-
-            <!-- Feedback Card 2 -->
-            <div class="col-md-6">
-                <div class="feedback-card">
-                    <div class="feedback-image">
-                        <img src="student2.jpg" alt="Jane Smith">
-                    </div>
-                    <div class="feedback-text">
-                        <p>"The CRT training helped me ace my campus interviews. Highly recommend this institute!"</p>
-                        <p class="text-success"><strong>Got placed at Infosys</strong></p>
-                        <p><strong>- Jane Smith, Software Engineer</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Feedback Card 3 -->
-            <div class="col-md-6">
-                <div class="feedback-card">
-                    <div class="feedback-image">
-                        <img src="student3.jpg" alt="Alex Brown">
-                    </div>
-                    <div class="feedback-text">
-                        <p>"The digital marketing course was practical and up-to-date. I now run my own campaigns!"</p>
-                        <p class="text-success"><strong>Now working as Marketing Head at XYZ Pvt Ltd</strong></p>
-                        <p><strong>- Alex Brown, Marketing Specialist</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Feedback Card 4 -->
-            <div class="col-md-6">
-                <div class="feedback-card">
-                    <div class="feedback-image">
-                        <img src="student4.jpg" alt="Emily Davis">
-                    </div>
-                    <div class="feedback-text">
-                        <p>"The hands-on approach in the web development course was fantastic. I built my first website!"</p>
-                        <p class="text-success"><strong>Working at TCS as a Web Developer</strong></p>
-                        <p><strong>- Emily Davis, Web Developer</strong></p>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Company Logos Section -->
+    <section class="section company-section">
+        <div class="container">
+            <h2 class="section-heading">Our Recruitment Partners</h2>
+            <div class="marquee-wrap marquee-right">
+                <div class="marquee-track">
+                    <!-- Company cards -->
+                    <div class="company-card"><img src="https://api.letsdiskuss.com/resources/static/asset/uploads/1704385676098-images-2024-01-04T215607.357.jpeg" alt="TCS"></div>
+                    <div class="company-card"><img src="https://logodix.com/logo/1048357.png" alt="HCL"></div>
+                    <div class="company-card"><img src="https://www.financialexpress.com/wp-content/uploads/2017/05/wipro.jpg" alt="Wipro"></div>
+                    <div class="company-card"><img src="https://th.bing.com/th/id/R.d5e090fc9d26c7c2218527b0eef82ab1?rik=%2be1xQunDYankIA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-E8bbICo_fbY%2fU3s0SOf2JNI%2fAAAAAAAAAlA%2fsOfntwNl3Dg%2fs1600%2ftechmahindra_logo.png&ehk=Yy%2b7T3bpe0n%2bCPslec30fpT4dFiT4ONsXaSa8nBJcs4%3d&risl=&pid=ImgRaw&r=0" alt="Techmind"></div>
+                    <div class="company-card"><img src="https://logoeps.com/wp-content/uploads/2013/03/hcl-technologies-vector-logo.png" alt="Virtusa"></div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="company-card"><img src="https://asset.brandfetch.io/idelRQuBkX/idE9fvNUUH.jpeg" alt="TCS"></div>
+                    <div class="company-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/HCL_Technologies_Logo.svg" alt="HCL"></div>
+                    <div class="company-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Wipro_Primary_Logo_Color_RGB.svg" alt="Wipro"></div>
+                    <div class="company-card"><img src="https://static.wixstatic.com/media/11062b_1bb0e02f09704e4090282b4a23697a3a~mv2.png" alt="Techmind"></div>
+                    <div class="company-card"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Virtusa_Logo.svg" alt="Virtusa"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>

@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  padding: 20px;
+}
+
+/* Section headings */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Feedback Section */
+.feedback-section {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.feedback-marquee {
+  display: flex;
+  animation: feedbackScroll 15s linear infinite;
+}
+.feedback-item {
+  min-width: 300px;
+  background: #f1f1f1;
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+.feedback-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.stars {
+  color: gold;
+  font-size: 18px;
+}
+@keyframes feedbackScroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Company Section */
+.company-section {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.company-marquee {
+  display: flex;
+  animation: companyScroll 15s linear infinite;
+}
+.company-item {
+  min-width: 120px;
+  margin: 0 15px;
+}
+.company-item img {
+  width: 100px;
+  height: auto;
+}
+@keyframes companyScroll {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+/* Courses Section */
+.courses-section {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+.course-list {
+  list-style: none;
+  padding: 0;
+}
+.course-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+.course-list li:last-child {
+  border-bottom: none;
+}

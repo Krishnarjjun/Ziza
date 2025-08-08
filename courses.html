@@ -12,27 +12,27 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
+            background-color: #f4f6f9;
         }
         .navbar-brand {
             font-weight: bold;
         }
         .blinking-glow {
-        animation: blinkGlow 1.5s infinite;
-        color: #e52504;
-        font-weight: bold;
-        text-shadow: 0 0 5px #131c1d, 0 0 10px #1e2626, 0 0 15px #070e0f;
-    }
-
-    @keyframes blinkGlow {
-        0%, 100% {
-            opacity: 1;
-            text-shadow: 0 0 5px #e46186, 0 0 10px #d60f0f, 0 0 15px #2808c9;
+            animation: blinkGlow 1.5s infinite;
+            color: #e52504;
+            font-weight: bold;
+            text-shadow: 0 0 5px #131c1d, 0 0 10px #1e2626, 0 0 15px #070e0f;
         }
-        50% {
-            opacity: 0.3;
-            text-shadow: 0 0 2px #d76112, 0 0 5px #0a2122;
+        @keyframes blinkGlow {
+            0%, 100% {
+                opacity: 1;
+                text-shadow: 0 0 5px #e46186, 0 0 10px #d60f0f, 0 0 15px #2808c9;
+            }
+            50% {
+                opacity: 0.3;
+                text-shadow: 0 0 2px #d76112, 0 0 5px #0a2122;
+            }
         }
-    }
         .header-section {
             background: linear-gradient(135deg, #007bff, #6610f2);
             color: white;
@@ -43,12 +43,20 @@
             padding: 60px 0;
         }
         .card {
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             border: none;
-            background-color: #f8f9fa;
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+        }
+        .card img {
+            height: 180px;
+            object-fit: cover;
         }
         footer {
             background-color: #343a40;
@@ -59,14 +67,6 @@
             border-color: #007bff;
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
-        @media (max-width: 768px) {
-            .header-section {
-                padding: 40px 0;
-            }
-            .section {
-                padding: 40px 0;
-            }
-        }
     </style>
 </head>
 <body>
@@ -74,32 +74,18 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Your Institute</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="courses.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="placements.html">Placements</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="discover.html">Discover</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="blinking-glow" href="apply.html">Apply for Job</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="placements.html">Placements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="discover.html">Discover</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link blinking-glow" href="apply.html">Apply for Job</a></li>
                 </ul>
             </div>
         </div>
@@ -109,26 +95,98 @@
     <section class="header-section">
         <div class="container">
             <h1>Our Courses</h1>
-            <p>Explore our diverse range of IT and Non-IT courses to boost your career.</p>
+            <p>Explore our wide range of IT & Non-IT courses designed to elevate your career.</p>
         </div>
     </section>
 
-    <!-- Courses Section -->
+    <!-- IT Courses Section -->
     <section class="section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card p-3">
-                        <h3>IT Courses</h3>
-                        <p>Details for IT courses will be provided soon.</p>
+            <h2 class="mb-4 text-primary">IT Courses</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/java.jpg" alt="Java Full Stack">
+                        <div class="p-3">
+                            <h5>Java Full Stack</h5>
+                            <p>Master Java, Spring Boot, and modern front-end tech.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card p-3">
-                        <h3>Non-IT Courses</h3>
-                        <p>Details for Non-IT courses will be provided soon.</p>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/python.jpg" alt="Python Development">
+                        <div class="p-3">
+                            <h5>Python Development</h5>
+                            <p>From basics to advanced Python with real projects.</p>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/data-science.jpg" alt="Data Science">
+                        <div class="p-3">
+                            <h5>Data Science</h5>
+                            <p>Learn ML, AI, and data analytics from scratch.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/aws.jpg" alt="AWS Cloud">
+                        <div class="p-3">
+                            <h5>AWS Cloud</h5>
+                            <p>Master cloud computing with AWS solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add 6 more IT courses in same format -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Non-IT Courses Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="mb-4 text-primary">Non-IT Courses</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/digital-marketing.jpg" alt="Digital Marketing">
+                        <div class="p-3">
+                            <h5>Digital Marketing</h5>
+                            <p>SEO, SEM, social media marketing, and more.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/hr-management.jpg" alt="HR Management">
+                        <div class="p-3">
+                            <h5>HR Management</h5>
+                            <p>Recruitment, employee relations, and HR laws.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/communication-skills.jpg" alt="Communication Skills">
+                        <div class="p-3">
+                            <h5>Communication Skills</h5>
+                            <p>Enhance verbal and written communication abilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/finance.jpg" alt="Finance and Accounting">
+                        <div class="p-3">
+                            <h5>Finance & Accounting</h5>
+                            <p>Basics of accounting, finance, and taxation.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add 6 more Non-IT courses in same format -->
             </div>
         </div>
     </section>
