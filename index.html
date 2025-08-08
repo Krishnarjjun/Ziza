@@ -14,16 +14,20 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
+
         }
         .navbar-brand {
             font-weight: bold;
             color: blue;
         }
         .hero-section {
-            background: linear-gradient(135deg, #b21a25, #6610f2);
+            background-image: url('IMG-20250806-WA0006.jpg');
+            background-repeat: no-repeat;
             color: white;
             padding: 100px 0;
             text-align: center;
+            background-position: center;
+
         }
         .section {
             padding: 60px 0;
@@ -96,6 +100,50 @@
                 width: 200px;
             }
         }
+        .feedback-card {
+    display: flex;
+    height: 220px; /* Fixed height for uniform cards */
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.feedback-image {
+    flex: 0 0 30%;
+    background-color: #f0f0f0;
+}
+
+.feedback-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feedback-text {
+    flex: 0 0 70%;
+    padding: 15px;
+    overflow-y: auto; /* Enables scrolling inside card */
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f1f1f1;
+}
+
+/* Professional scrollbar style */
+.feedback-text::-webkit-scrollbar {
+    width: 6px;
+}
+.feedback-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.feedback-text::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 5px;
+}
+.feedback-text::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+
     </style>
 </head>
 <body>
@@ -137,11 +185,11 @@
     <!-- Home Page -->
     <section class="hero-section">
         <div class="container">
-            <h1>Welcome to Your Institute</h1>
-            <p>Empowering futures through education and professional services.</p>
-            <a href="contact.html" class="btn btn-light mt-3">Get in Touch</a>
         </div>
     </section>
+     <div style="background-color: rgba(0, 123, 255, 0.1); text-align: center;">
+    <a href="contact.html" class="btn btn-light mt-3">Get in Touch</a>
+</div>
 
     <!-- About Us Section -->
     <section class="section">
@@ -165,6 +213,7 @@
     </section>
 
     <!-- Featured Courses Marquee Section -->
+     
     <section class="section marquee">
         <div class="container">
             <h2 class="text-center mb-4">Featured Courses</h2>
@@ -189,38 +238,72 @@
         </div>
     </section>
 
-    <!-- Students Feedback Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center mb-4">Students Feedback</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="feedback-card">
+   <!-- Students Feedback Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center mb-4">Students Feedback</h2>
+        <div class="row g-4">
+
+            <!-- Feedback Card 1 -->
+            <div class="col-md-6">
+                <div class="feedback-card">
+                    <div class="feedback-image">
+                        <img src="student1.jpg" alt="John Doe">
+                    </div>
+                    <div class="feedback-text">
                         <p>"The IT consulting course transformed my career. The instructors were knowledgeable and supportive!"</p>
+                        <p class="text-success"><strong>Got placed in his dream job at Google</strong></p>
                         <p><strong>- John Doe, IT Professional</strong></p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="feedback-card">
+            </div>
+
+            <!-- Feedback Card 2 -->
+            <div class="col-md-6">
+                <div class="feedback-card">
+                    <div class="feedback-image">
+                        <img src="student2.jpg" alt="Jane Smith">
+                    </div>
+                    <div class="feedback-text">
                         <p>"The CRT training helped me ace my campus interviews. Highly recommend this institute!"</p>
+                        <p class="text-success"><strong>Got placed at Infosys</strong></p>
                         <p><strong>- Jane Smith, Software Engineer</strong></p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="feedback-card">
+            </div>
+
+            <!-- Feedback Card 3 -->
+            <div class="col-md-6">
+                <div class="feedback-card">
+                    <div class="feedback-image">
+                        <img src="student3.jpg" alt="Alex Brown">
+                    </div>
+                    <div class="feedback-text">
                         <p>"The digital marketing course was practical and up-to-date. I now run my own campaigns!"</p>
+                        <p class="text-success"><strong>Now working as Marketing Head at XYZ Pvt Ltd</strong></p>
                         <p><strong>- Alex Brown, Marketing Specialist</strong></p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="feedback-card">
+            </div>
+
+            <!-- Feedback Card 4 -->
+            <div class="col-md-6">
+                <div class="feedback-card">
+                    <div class="feedback-image">
+                        <img src="student4.jpg" alt="Emily Davis">
+                    </div>
+                    <div class="feedback-text">
                         <p>"The hands-on approach in the web development course was fantastic. I built my first website!"</p>
+                        <p class="text-success"><strong>Working at TCS as a Web Developer</strong></p>
                         <p><strong>- Emily Davis, Web Developer</strong></p>
                     </div>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer>
